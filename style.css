@@ -1384,3 +1384,51 @@ button {
 section {
     scroll-margin-top: 90px;
 }
+
+/* Added styles for project detail pages and the VOID project card */
+html { scroll-padding-top: 90px; }
+section { scroll-margin-top: 90px; }
+
+.void-thumbnail {
+    min-height: 240px; height: 100%; width: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; position: relative; overflow: hidden; color: #fff;
+    background: radial-gradient(circle at center, rgba(124,92,255,.25), transparent 48%),
+                linear-gradient(135deg, #090912, #19102f 55%, #08080d);
+}
+.void-thumbnail::before, .void-thumbnail::after {
+    content: ""; position: absolute; border: 1px solid rgba(155,131,255,.3);
+    border-radius: 50%; width: 230px; height: 230px;
+}
+.void-thumbnail::after { width: 160px; height: 160px; }
+.void-symbol { font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; font-weight: 900;
+    color: var(--primary-light); text-shadow: 0 0 28px rgba(124,92,255,.8); z-index: 1; }
+.void-thumbnail-title { font-weight: 900; letter-spacing: .4em; z-index: 1; }
+.void-thumbnail-subtitle { font-size: .65rem; letter-spacing: .16em; color: var(--text-light);
+    text-align: center; z-index: 1; }
+
+.detail-page { min-height: 100vh; padding: 130px 24px 80px; }
+.detail-container { width: min(100%, var(--max-width)); margin: 0 auto; }
+.detail-kicker { color: var(--primary-light); text-transform: uppercase; letter-spacing: .18em;
+    font-size: .8rem; font-weight: 700; margin-bottom: 12px; }
+.detail-title { font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.08; margin-bottom: 18px; }
+.detail-lead { color: var(--text-light); max-width: 760px; font-size: 1.08rem; margin-bottom: 28px; }
+.detail-panel { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    padding: clamp(20px, 4vw, 36px); margin-top: 28px; }
+.detail-panel h2 { margin-bottom: 12px; }
+.detail-panel p, .detail-panel li { color: var(--text-light); }
+.detail-panel ul { padding-left: 22px; margin-top: 10px; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.detail-media { width: 100%; max-height: 78vh; object-fit: contain; background: #050509;
+    border: 1px solid var(--border); border-radius: 16px; margin-top: 24px; }
+.detail-viewer { display: flex; align-items: center; justify-content: center; gap: 16px;
+    flex-wrap: wrap; margin-top: 18px; }
+.viewer-status { color: var(--text-light); min-width: 100px; text-align: center; }
+.game-embed { width: 100%; min-height: 70vh; border: 1px solid var(--border);
+    border-radius: 16px; background: #050509; margin-top: 24px; }
+.detail-back { display: inline-flex; margin-top: 28px; color: var(--primary-light); font-weight: 700; }
+.detail-back:hover { color: var(--secondary); }
+@media (max-width: 600px) {
+    .detail-page { padding: 110px 18px 56px; }
+    .game-embed { min-height: 65vh; }
+}
